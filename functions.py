@@ -1,4 +1,5 @@
 from functools import reduce
+import math
 def read_data(_archivo):
     try:
         import csv
@@ -52,5 +53,24 @@ def reduce(dic,atributo):
         return lista
     except ValueError as err:
         print("excepcion de error: "+str(err))
-
+def silhouette(lista1,lista2):
+    p=0
+    flag=0
+    for i in lista1:
+        if flag != 0:
+           sumatorio=sumatorio+math.sqrt(math.pow(math.fabs(lista1[p]-lista1[i]),2))
+        else
+            flag=1
+    a = sumatorio / (len(lista1)-1)
+    flag2=0
+    for y in lista2:
+        if flag2 != 0:
+           sumatorio=sumatorio+math.sqrt(math.pow(math.fabs(lista2[p]-lista2[y]),2))
+        else
+            flag2=1
+    b = sumatorio / (len(lista2)-1)
+    if(a<b):
+        s=(b-a)/b
+    else:
+        s=(b-a)/a
 
