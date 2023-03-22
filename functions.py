@@ -32,22 +32,25 @@ def read_data(_archivo):
 def split(diccionario):
     dic1=dict()
     dic2=dict()
+    p=0
+    i=0
     for dato in diccionario:
         if diccionario[dato]["type"]=="white":
-            dic1.update(diccionario[dato])
+            dic1.update({"dato{0}".format(i):diccionario[dato]})
+            i += 1
         else:
-            dic2.update(diccionario[dato])
-
-    return dic1,dic2
+            dic2.update({"dato{0}".format(p):diccionario[dato]})
+            p += 1
+    return dic1, dic2
 
 def reduce(dic,atributo):
-    #lista = list()
+    lista = list()
+    try:
+        for dato in dic:
+            lista.append(dic[dato][atributo])
 
-    for dato in dic:
-        print(dic[atributo])
-        #lista.append(dic[dato][atributo])
-    """
-    for item in lista:
-        print(item)
-    """
+        return lista
+    except ValueError as err:
+        print("excepcion de error: "+str(err))
+
 
