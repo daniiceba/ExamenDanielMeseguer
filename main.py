@@ -1,3 +1,3 @@
 from functions import *
 dicionario =read_data("winequality.csv")
-split(dicionario)
+dic1,dic2=split(dicionario)

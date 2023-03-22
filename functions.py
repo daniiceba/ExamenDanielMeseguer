@@ -33,13 +33,12 @@ def split(diccionario):
     dic1=dict()
     dic2=dict()
     for dato in diccionario:
-        print(dato)
-        #if dato["type"]=="white":
-        #    dic1.update(dato)
+        if diccionario[dato]["type"]=="white":
+            dic1.update(diccionario[dato])
+        else:
+            dic2.update(diccionario[dato])
 
-       # else:
-        #    dic2.update(dato)
+    return dic1,dic2
 
-    for dato in dic1:
-        dato.pop("type")
-    print(dic1)
+def reduce()
+
