@@ -1,11 +1,19 @@
-
+import csv
 def read_data(_archivo):
     try:
-        archivo = open(_archivo, mode="rt", encoding="utf-8")
+
+        with open(_archivo, 'r') as file:
+            reader = csv.reader(file)
+
     except:
         print("el nombre del archivo es incorrecto// error lectura del archivo")
     else:
-        lista_lineas = archivo.readlines()
-        print("Lista de líneas leídas: ", lista_lineas)
-        _archivo.close()
+        i = 1
+        dic = {}
+        for row in reader:
+            dic.update({"dato{0}".format(i): row})
+            i = i + 1
 
+        print(dic)
+
+"""
