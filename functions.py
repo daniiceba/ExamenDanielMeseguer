@@ -1,6 +1,6 @@
 
 def read_data(_archivo):
-   # try:
+    try:
         import csv
         with open(_archivo, 'r') as file:
             reader = csv.reader(file)
@@ -12,25 +12,34 @@ def read_data(_archivo):
                 if flag==0:
                     dic2 = dict()
                     p=0
+                    flag2=1
                     for atribute in row:
                         dic2.update({claves[p]: atribute})
                         p=p+1
-                    #if dic2.get(' ')==:
-                    dic.update({"dato{0}".format(i): dic2})
-                    i = i + 1
+                        if atribute=='':
+                            flag2=0
+                    if flag2==1:
+                        dic.update({"dato{0}".format(i): dic2})
+                        i = i + 1
 
                 else:
                     flag=0
                     for atribute in row:
                         claves.append(atribute)
-
-
-
-
-            print(dic)
-
-
-    #except:
+        return dic
+    except:
         print("el nombre del archivo es incorrecto// error lectura del archivo")
+def split(diccionario):
+    dic1=dict()
+    dic2=dict()
+    for dato in diccionario:
+        print(dato)
+        #if dato["type"]=="white":
+        #    dic1.update(dato)
 
+       # else:
+        #    dic2.update(dato)
 
+    for dato in dic1:
+        dato.pop("type")
+    print(dic1)

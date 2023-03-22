@@ -1,2 +1,3 @@
 from functions import *
-read_data("winequality.csv")
+dicionario =read_data("winequality.csv")
+split(dicionario)
