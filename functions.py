@@ -1,4 +1,4 @@
-
+from functools import reduce
 def read_data(_archivo):
     try:
         import csv
@@ -40,5 +40,14 @@ def split(diccionario):
 
     return dic1,dic2
 
-def reduce()
+def reduce(dic,atributo):
+    #lista = list()
+
+    for dato in dic:
+        print(dic[atributo])
+        #lista.append(dic[dato][atributo])
+    """
+    for item in lista:
+        print(item)
+    """
 
